@@ -25,7 +25,7 @@
             padding: 0 20px;
         }
 
-        /* LANGUAGE TOGGLE — FIXED */
+        /* LANGUAGE TOGGLE */
         .lang-toggle {
             position: fixed;
             top: 20px;
@@ -61,7 +61,7 @@
             color: #0d0808;
         }
 
-        /* HERO — ROYAL STYLE */
+        /* HERO */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -126,6 +126,20 @@
             margin: 24px 0 32px;
             color: #c4b5a0;
             letter-spacing: 3px;
+        }
+        .hero .address-badge {
+            display: inline-block;
+            background: rgba(212, 167, 71, 0.08);
+            border: 1px solid #d4a747;
+            padding: 10px 24px;
+            border-radius: 50px;
+            color: #d4a747;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .hero .address-badge i {
+            margin-right: 10px;
         }
         .btn {
             display: inline-block;
@@ -299,6 +313,15 @@
             color: #f5e6d3;
             transform: scale(1.1);
         }
+        footer .footer-address {
+            margin-top: 8px;
+            font-size: 0.95rem;
+            color: #a8927a;
+        }
+        footer .footer-address i {
+            color: #d4a747;
+            margin-right: 8px;
+        }
 
         /* LANGUAGE HIDE/SHOW */
         .lang-en { display: block; }
@@ -316,6 +339,10 @@
             }
             .hero .tagline {
                 font-size: 1rem;
+            }
+            .hero .address-badge {
+                font-size: 0.8rem;
+                padding: 6px 16px;
             }
             .btn {
                 padding: 12px 28px;
@@ -370,6 +397,11 @@
                 <span class="sub lang-en">Le Goût Royal</span>
                 <span class="sub lang-fr">Royal Taste</span>
             </h1>
+            <div class="address-badge">
+                <i class="fas fa-map-pin"></i>
+                <span class="lang-en">Alausa Bus Stop, Gberigbe-agura, Ikorodu, Lagos</span>
+                <span class="lang-fr">Alausa Bus Stop, Gberigbe-agura, Ikorodu, Lagos</span>
+            </div>
             <p class="tagline lang-en">Where every dish is crafted with royal passion and heritage.</p>
             <p class="tagline lang-fr">Chaque plat est préparé avec passion royale et héritage.</p>
             <div>
@@ -381,7 +413,7 @@
         </div>
     </section>
 
-    <!-- BOOK SECTION — NO FOOD PRICES, JUST BOOKING -->
+    <!-- BOOK SECTION -->
     <section class="book-section" id="book">
         <div class="container">
             <h2 class="lang-en">Book PPP Kitchen</h2>
@@ -402,6 +434,7 @@
                     <option value="Other">Other / Autre</option>
                 </select>
                 <input type="number" id="guests" placeholder="Number of Guests / Nombre de Convives" min="1" required />
+                <input type="text" id="location" placeholder="Event Location / Lieu de l'Événement (e.g., Lomé, Agoè, etc.)" required />
                 <textarea id="foodRequest" rows="4" placeholder="Describe the food you want (e.g., grilled fish, jollof rice, fufu, etc.) / Décrivez les plats souhaités (ex: poisson grillé, riz jollof, fufu, etc.)" required></textarea>
                 <button type="submit" class="lang-en">📲 Send via WhatsApp</button>
                 <button type="submit" class="lang-fr">📲 Envoyer via WhatsApp</button>
@@ -430,14 +463,18 @@
             <a href="#"><i class="fab fa-facebook-f"></i></a>
         </div>
         <p>PPP Kitchen — Le Goût Royal &copy; 2026</p>
-        <p style="font-size:0.85rem; margin-top:6px; color:#5a4a3a;">
-            <span class="lang-en">📍 Alausa Bus Stop, Gberigbe-agura, Ikorodu, Lagos</span>
-            <span class="lang-fr">📍 Alausa Bus Stop, Gberigbe-agura, Ikorodu, Lagos</span>
-        </p>
+        <div class="footer-address">
+            <i class="fas fa-map-pin"></i>
+            <span class="lang-en">Alausa Bus Stop, Gberigbe-agura, Ikorodu, Lagos</span>
+            <span class="lang-fr">Alausa Bus Stop, Gberigbe-agura, Ikorodu, Lagos</span>
+        </div>
+        <div class="footer-address" style="margin-top:4px;">
+            <i class="fas fa-phone"></i> +228 96 09 65 80
+        </div>
     </footer>
 
     <script>
-        // LANGUAGE TOGGLE — FULLY WORKING
+        // LANGUAGE TOGGLE
         const langButtons = document.querySelectorAll('.lang-toggle button');
         langButtons.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -447,7 +484,7 @@
             });
         });
 
-        // BOOK FORM → WHATSAPP WITH PRE-FILLED MESSAGE
+        // BOOK FORM → WHATSAPP WITH LOCATION
         document.getElementById('bookForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
@@ -456,9 +493,10 @@
             const date = document.getElementById('date').value;
             const eventType = document.getElementById('eventType').value;
             const guests = document.getElementById('guests').value.trim();
+            const location = document.getElementById('location').value.trim();
             const foodRequest = document.getElementById('foodRequest').value.trim();
 
-            if (!name || !phone || !date || !eventType || !guests || !foodRequest) {
+            if (!name || !phone || !date || !eventType || !guests || !location || !foodRequest) {
                 alert('Please fill in all fields.');
                 return;
             }
@@ -471,6 +509,7 @@
                 `Date: ${date}\n` +
                 `Event Type: ${eventType}\n` +
                 `Number of Guests: ${guests}\n` +
+                `Location: ${location}\n` +
                 `Food Request: ${foodRequest}\n\n` +
                 `Please confirm availability. Thank you!`;
 
@@ -479,4 +518,4 @@
         });
     </script>
 </body>
-</html>
+                </html>
