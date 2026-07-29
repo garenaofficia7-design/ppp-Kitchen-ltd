@@ -127,20 +127,6 @@
             color: #c4b5a0;
             letter-spacing: 3px;
         }
-        .hero .address-badge {
-            display: inline-block;
-            background: rgba(212, 167, 71, 0.08);
-            border: 1px solid #d4a747;
-            padding: 10px 24px;
-            border-radius: 50px;
-            color: #d4a747;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-        }
-        .hero .address-badge i {
-            margin-right: 10px;
-        }
         .btn {
             display: inline-block;
             padding: 16px 48px;
@@ -197,8 +183,11 @@
 
         /* BOOK SECTION */
         .book-section {
-            padding: 90px 0;
+            padding: 0 0 20px 0;
             background: #120b0b;
+        }
+        .book-section .section-padding {
+            padding: 80px 0;
         }
         .book-section h2 {
             font-family: 'Playfair Display', serif;
@@ -206,6 +195,7 @@
             text-align: center;
             color: #d4a747;
             letter-spacing: 2px;
+            margin-bottom: 8px;
         }
         .book-section .subtitle {
             text-align: center;
@@ -262,9 +252,12 @@
 
         /* CERTIFICATE */
         .certificate-section {
-            padding: 80px 0;
+            padding: 0 0 20px 0;
             background: #0d0808;
             text-align: center;
+        }
+        .certificate-section .section-padding {
+            padding: 80px 0;
         }
         .certificate-section h2 {
             font-family: 'Playfair Display', serif;
@@ -313,12 +306,12 @@
             color: #f5e6d3;
             transform: scale(1.1);
         }
-        footer .footer-address {
+        footer .footer-phone {
             margin-top: 8px;
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: #a8927a;
         }
-        footer .footer-address i {
+        footer .footer-phone i {
             color: #d4a747;
             margin-right: 8px;
         }
@@ -339,10 +332,6 @@
             }
             .hero .tagline {
                 font-size: 1rem;
-            }
-            .hero .address-badge {
-                font-size: 0.8rem;
-                padding: 6px 16px;
             }
             .btn {
                 padding: 12px 28px;
@@ -372,6 +361,12 @@
                 max-width: 100%;
                 margin: 0 10px;
             }
+            .book-section .section-padding {
+                padding: 50px 0;
+            }
+            .certificate-section .section-padding {
+                padding: 50px 0;
+            }
         }
     </style>
 </head>
@@ -390,32 +385,29 @@
 
     <!-- HERO -->
     <section class="hero">
-        <div class="hero-content">
-            <span class="crown">👑</span>
-            <h1>
-                PPP KITCHEN
-                <span class="sub lang-en">Le Goût Royal</span>
-                <span class="sub lang-fr">Royal Taste</span>
-            </h1>
-            <div class="address-badge">
-                <i class="fas fa-map-pin"></i>
-                <span class="lang-en">Alausa Bus Stop, Gberigbe-agura, Ikorodu, Lagos</span>
-                <span class="lang-fr">Alausa Bus Stop, Gberigbe-agura, Ikorodu, Lagos</span>
-            </div>
-            <p class="tagline lang-en">Where every dish is crafted with royal passion and heritage.</p>
-            <p class="tagline lang-fr">Chaque plat est préparé avec passion royale et héritage.</p>
-            <div>
-                <a href="#book" class="btn lang-en">Book Now</a>
-                <a href="#book" class="btn lang-fr">Réserver</a>
-                <a href="#certificate" class="btn btn-outline lang-en">Our Credentials</a>
-                <a href="#certificate" class="btn btn-outline lang-fr">Nos Certifications</a>
+        <div class="container">
+            <div class="hero-content">
+                <span class="crown">👑</span>
+                <h1>
+                    PPP KITCHEN
+                    <span class="sub lang-en">Le Goût Royal</span>
+                    <span class="sub lang-fr">Royal Taste</span>
+                </h1>
+                <p class="tagline lang-en">Where every dish is crafted with royal passion and heritage.</p>
+                <p class="tagline lang-fr">Chaque plat est préparé avec passion royale et héritage.</p>
+                <div>
+                    <a href="#book" class="btn lang-en">Book Now</a>
+                    <a href="#book" class="btn lang-fr">Réserver</a>
+                    <a href="#certificate" class="btn btn-outline lang-en">Our Credentials</a>
+                    <a href="#certificate" class="btn btn-outline lang-fr">Nos Certifications</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- BOOK SECTION -->
     <section class="book-section" id="book">
-        <div class="container">
+        <div class="container section-padding">
             <h2 class="lang-en">Book PPP Kitchen</h2>
             <h2 class="lang-fr">Réserver PPP Kitchen</h2>
             <p class="subtitle lang-en">Fill in your event details and we'll get back to you via WhatsApp.</p>
@@ -444,7 +436,7 @@
 
     <!-- CERTIFICATE -->
     <section class="certificate-section" id="certificate">
-        <div class="container">
+        <div class="container section-padding">
             <h2 class="lang-en">Our Chef's Credentials</h2>
             <h2 class="lang-fr">Les Certifications de Notre Chef</h2>
             <p class="sub lang-en">Certified by Dunni Kreamicious Cakes & Events — Togo</p>
@@ -463,12 +455,7 @@
             <a href="#"><i class="fab fa-facebook-f"></i></a>
         </div>
         <p>PPP Kitchen — Le Goût Royal &copy; 2026</p>
-        <div class="footer-address">
-            <i class="fas fa-map-pin"></i>
-            <span class="lang-en">Alausa Bus Stop, Gberigbe-agura, Ikorodu, Lagos</span>
-            <span class="lang-fr">Alausa Bus Stop, Gberigbe-agura, Ikorodu, Lagos</span>
-        </div>
-        <div class="footer-address" style="margin-top:4px;">
+        <div class="footer-phone">
             <i class="fas fa-phone"></i> +228 96 09 65 80
         </div>
     </footer>
@@ -484,7 +471,7 @@
             });
         });
 
-        // BOOK FORM → WHATSAPP WITH LOCATION
+        // BOOK FORM → WHATSAPP
         document.getElementById('bookForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
@@ -518,4 +505,4 @@
         });
     </script>
 </body>
-                </html>
+</html>
